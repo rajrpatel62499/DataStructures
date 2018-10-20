@@ -1,0 +1,8 @@
+Application
+--------------------
+1.Represantating Polynomial and calculation it
+     Ex->6x3 + 5x2 + 3x +7
+
+2.Reversing a Linked List
+    -Using Iterative Method
+    -Using Recursion
