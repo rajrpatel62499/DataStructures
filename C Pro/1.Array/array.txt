@@ -1,0 +1,8 @@
+programms definations for array
+--------------------------
+1.traverse array
+2.insert element in array
+3.insert element at the given position
+4.delet element from array
+5.delete given element from the array
+6.Merge two arrays
