@@ -1,0 +1,11 @@
+Applictaion of stack
+===========================================
+1.Reversing a list
+2.parenthesses Checker
+
+3.Infix to prefix // Infix to Postfixt
+4.Evaluation of Prefix  Expression
+5.Evaluation of Postfix Expression
+
+6.Recursion
+7.Tower of Hanoi
