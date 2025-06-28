@@ -54,7 +54,45 @@ class BST:
             return self.search(node.left, target)
         elif target > node.value: 
             return self.search(node.right, target)
+
+    def min(self, node): 
+        current = node 
+        while current.left is not None: 
+            current = current.left 
+        return current.value 
+    def max(self, node): 
+        current = node 
+        while current.right is not None: 
+            current = current.right 
+        return current.value 
         
+    def delete(self, node, data):
+        if not node:
+            return None
+    
+        if data < node.value:
+            node.left = self.delete(node.left, data)
+        elif data > node.value:
+            node.right = self.delete(node.right, data)
+        else:
+            # Node with only one child or no child
+            if not node.left:
+              temp = node.right
+              node = None
+              return temp
+            elif not node.right:
+              temp = node.left
+              node = None
+              return temp
+    
+            # Node with two children, get the in-order successor
+            # first find the min value on right side - cause next successor will be greather than current value that's why need to look on right side             
+            node.value = self.min(node.right)
+            # after finding and setting value, delete that node recursively - and it will be leaf node or one node (if right node exist) deletion 
+            node.right = self.delete(node.right, node.value)
+
+        # must return it - whether it's modified or not modified by the sub problems 
+        return node
     # Traversal 
     def in_order_traversal(self, node): 
         # traverse until node is not none 
@@ -88,7 +126,9 @@ result = bst.search(root, 8)
 print(result)
 if result: 
     print(result.get_dict())
-
+print(bst.search(root,8))
+bst.delete(root, 8)
+print(bst.search(root,8))
 # print("In Order traversal: ", end="")
 # bst.in_order_traversal(root)
 
