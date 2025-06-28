@@ -38,16 +38,16 @@ def pre_order_traversal(node):
     if node is None: 
         return None
     print(node.value, end=", ")
-    in_order_traversal(node.left)
-    in_order_traversal(node.right)
+    pre_order_traversal(node.left)
+    pre_order_traversal(node.right)
 
 
 def post_order_traversal(node): 
     # traverse until node is not none 
     if node is None: 
         return None
-    in_order_traversal(node.left)
-    in_order_traversal(node.right)
+    post_order_traversal(node.left)
+    post_order_traversal(node.right)
     print(node.value, end=", ")
 
 print("In Order traversal: ", end="")
